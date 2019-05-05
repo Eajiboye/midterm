@@ -26,9 +26,13 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function about()
+    public function profile()
+
     {
-        return view('about', ['test' => 'test']);
+     $user = $user = Auth::user();
+
+
+        return view('profile', ['test' => 'test']);
     }
 }
 
