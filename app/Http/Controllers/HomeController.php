@@ -36,6 +36,7 @@ class HomeController extends Controller
         $user ->save ();
         dd($user);
 
+        $user ->delete();
 
         return view('profile', ['test' => 'test']);
     }
