@@ -31,11 +31,9 @@ class HomeController extends Controller
     {
      //$user = $user = Auth::user();
 
-        $car = Car::find();
         $cars = Car::all();
-        $car ->make = 'honda ';
-        $car ->delete();
 
+        dd($cars ->count());
 
 
 
