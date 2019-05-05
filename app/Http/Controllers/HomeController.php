@@ -29,7 +29,12 @@ class HomeController extends Controller
     public function profile()
 
     {
-     $user = $user = Auth::user();
+     //$user = $user = Auth::user();
+
+        $user = User::find(3);
+        $user ->name = 'Steve Smith';
+        $user ->save ();
+        dd($user);
 
 
         return view('profile', ['test' => 'test']);
