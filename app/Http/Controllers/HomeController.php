@@ -31,15 +31,15 @@ class HomeController extends Controller
     {
      //$user = $user = Auth::user();
 
-        $users = User::all();
+        $car = Car::find();
+        $cars = Car::all();
+        $car ->year = '2000';
+        $car ->save();
+      
+        dd($cars);
 
-        $users = User::where ('id', 1)
-            ->orderBy('name', 'desc')
-            ->take(10)
-            ->get();
-        dd($users ->count());
 
-        return view('profile', ['test' => 'test']);
+        return view('profile', ['cars' => $cars]);
     }
 }
 
