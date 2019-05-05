@@ -1,16 +1,18 @@
 <?php
-use Illuminate\Database\Seeder;
-class CarsTableSeeder extends Seeder
+namespace Tests\Feature;
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+class LoginTest extends TestCase
 {
     /**
-     * Run the database seeds.
+     * A basic test example.
      *
      * @return void
      */
-    public function run()
+    public function testExample()
     {
-        factory(App\Car::class, 50)->create()->each(function ($user) {
-            // $user->posts()->save(factory(App\Post::class)->make());
-        });
+        $response = $this->get('/login');
+        $response->assertStatus(200);
     }
 }
