@@ -31,12 +31,13 @@ class HomeController extends Controller
     {
      //$user = $user = Auth::user();
 
-        $user = User::find(3);
-        $user ->name = 'Steve Smith';
-        $user ->save ();
-        dd($user);
+        $users = User::all();
 
-        $user ->delete();
+        $users = User::where ('id', 1)
+            ->orderBy('name', 'desc')
+            ->take(10)
+            ->get();
+        dd($users ->count());
 
         return view('profile', ['test' => 'test']);
     }
