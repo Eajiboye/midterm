@@ -33,10 +33,10 @@ class HomeController extends Controller
 
         $car = Car::find();
         $cars = Car::all();
-        $car ->year = '2000';
-        $car ->save();
-      
-        dd($cars);
+        $car ->make = 'honda ';
+        $car ->delete();
+
+
 
 
         return view('profile', ['cars' => $cars]);
